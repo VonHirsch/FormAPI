@@ -60,6 +60,10 @@ class FormAPI extends PluginBase implements Listener {
         }
     }
 
+    public function getFormById($id) : Form {
+        return isset($this->forms[$id]) ? $this->forms[$id] : null;
+    }
+
     /**
      * @param DataPacketReceiveEvent $ev
      */
@@ -78,9 +82,9 @@ class FormAPI extends PluginBase implements Listener {
                 $form->processData($data);
                 $callable = $form->getCallable();
                 if($callable !== null) {
-                    $callable($ev->getPlayer(), $data);
+                    $callable($ev->getPlayer(), $data, $form->actionFormId);
                 }
-                unset($this->forms[$formId]);
+                //unset($this->forms[$formId]);
                 $ev->setCancelled();
             }
         }

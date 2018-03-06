@@ -17,6 +17,8 @@ abstract class Form {
     public $playerName;
     /** @var callable */
     private $callable;
+    /** @var int */
+    public $actionFormId;
 
     /**
      * @param int $id
@@ -55,4 +57,5 @@ abstract class Form {
 
     public function processData(&$data) : void {
     }
+
 }

@@ -80,8 +80,9 @@ class ModalForm extends Form {
     /**
      * @param string $text
      */
-    public function setButton1(string $text) : void {
+    public function setButton1(string $text, ?int $actionFormId = null) : void {
         $this->data["button1"] = $text;
+        $this->actionFormId = $actionFormId;
     }
 
     /**
@@ -94,8 +95,9 @@ class ModalForm extends Form {
     /**
      * @param string $text
      */
-    public function setButton2(string $text) : void {
+    public function setButton2(string $text, ?int $actionFormId = null) : void {
         $this->data["button2"] = $text;
+        $this->actionFormId = $actionFormId;
     }
 
     /**
